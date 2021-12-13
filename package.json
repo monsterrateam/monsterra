@@ -1,0 +1,45 @@
+{
+  "name": "monsterra",
+  "version": "1.0.0",
+  "description": "monsterra token",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "optimize": "npx truffle run contract-size --checkMaxSize",
+    "compile": "npx truffle compile",
+    "migrate": "npx truffle migrate --network bsc_testnet",
+    "test": "npx truffle test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monsterrateam/monsterra.git"
+  },
+  "keywords": [
+    "ERC20",
+    "Ethereum",
+    "Defi",
+    "Decentralized",
+    "Finance"
+  ],
+  "author": "monsterrateam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/monsterrateam/monsterra/issues"
+  },
+  "homepage": "https://github.com/monsterrateam/monsterra/blob/main/README.md",
+  "dependencies": {
+    "@openzeppelin/contracts": "^3.3.0",
+    "@truffle/hdwallet-provider": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "openzeppelin-test-helpers": "^0.5.1",
+    "truffle": "^5.4.14",
+    "verify": "^0.1.2",
+    "solc": "0.8.0"
+  },
+  "devDependencies": {
+    "truffle-plugin-verify": "^0.5.8",
+    "truffle-contract-size": "^2.0.1"
+  }
+}
