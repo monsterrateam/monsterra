@@ -1,10 +1,12 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.0;
+pragma solidity 0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 contract MAGToken is ERC20, Ownable {
+    event MinterAdded(address indexed _minterAddr);
+    event MinterRemoved(address indexed _minterAddr);
 
     mapping (address => bool ) public minter;
 
@@ -32,11 +34,13 @@ contract MAGToken is ERC20, Ownable {
         require(!minter[_minterAddr], "Is minter");
         minterList.push(_minterAddr);
         minter[_minterAddr] = true;
+        emit MinterAdded(_minterAddr);
     }
 
     function removeMinter(address _minterAddr) public onlyOwner{
         require(minter[_minterAddr], "Not minter");
         minter[_minterAddr] = false;
+        emit MinterRemoved(_minterAddr);
         
         uint256 i = 0;
         address _minter;
